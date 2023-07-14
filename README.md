@@ -6,6 +6,8 @@
 
 </div>
 
+<div align="center"> ✋^^🤚 Hi </div>
+
 <div align="center">
   
 ![11](https://pbs.twimg.com/profile_images/2097403581/profile_400x400.png)

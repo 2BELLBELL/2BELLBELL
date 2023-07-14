@@ -16,7 +16,7 @@
 
 <h3 align="center">🌈 SNS 🌈</h3>
 <p align="center">
-  <a href=" "><img src="https://img.shields.io/badge/Blog-11B48A?style=flat-square&logo=Blogger&logoColor=white&link= "/></a>&nbsp
+  <a href="https://blog.naver.com/wowhd45"><img src="https://img.shields.io/badge/Blog-11B48A?style=flat-square&logo=Blogger&logoColor=white&link=https://blog.naver.com/wowhd45"/></a>&nbsp
   <a href=" "><img src="https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=Instagram&logoColor=white&link= "/></a>&nbsp
 </p>
 

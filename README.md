@@ -1,4 +1,8 @@
+<div align="center">
 ### Hi there 👋
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgjbae1212%2Fhit-counter&count_bg=%233F7EC4&title_bg=%2336C232&icon=&icon_color=%23FAFAFA&title=hits&edge_flat=false)](https://github.com/2BELLBELL/2BELLBELL)                
+</div>
 
 <!--
 **2BELLBELL/2BELLBELL** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

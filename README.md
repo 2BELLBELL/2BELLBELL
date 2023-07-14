@@ -14,6 +14,13 @@
 
 </div>
 
+<div align="center"> 🤬? 👇👇 </div>
+
+<div align="center">
+
+![12](https://image.edaily.co.kr/images/photo/files/NP/S/2016/07/PS16072500012.jpg)
+
+</div>
 <!--
 **2BELLBELL/2BELLBELL** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 

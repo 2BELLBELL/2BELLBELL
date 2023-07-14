@@ -1,10 +1,16 @@
 
 ![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=180&section=header&text=Jaejong%20Lee&animation=blinking&fontSize=60&fontAlignY=30)
 <div align="center">
-  
+
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgjbae1212%2Fhit-counter&count_bg=%233F7EC4&title_bg=%2336C232&icon=&icon_color=%23FAFAFA&title=hits&edge_flat=false)](https://github.com/2BELLBELL/2BELLBELL)
 
 </div>
+
+<h3 align="center">📚 Tech Stack 📚</h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3766AB?style=flat-square&logo=Python&logoColor=white"/></a>&nbsp 
+</p>
+
 
 <div align="center"> ✋^^🤚 Hi </div>
 

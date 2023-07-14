@@ -1,5 +1,5 @@
 
-![header](https://capsule-render.vercel.app/api?type=rect&color=random&height=300&section=header&text=JAEJONG%20LEE&animation=fadeIn 1.2s&fontSize=90)
+![header](https://capsule-render.vercel.app/api?type=rect&color=random&height=300&section=header&text=JAEJONG%20LEE&animation=fadeIn &fontSize=90)
 <div align="center">
   
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgjbae1212%2Fhit-counter&count_bg=%233F7EC4&title_bg=%2336C232&icon=&icon_color=%23FAFAFA&title=hits&edge_flat=false)](https://github.com/2BELLBELL/2BELLBELL)

@@ -1,7 +1,9 @@
 <div align="center">
-### Hi there 👋
 
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgjbae1212%2Fhit-counter&count_bg=%233F7EC4&title_bg=%2336C232&icon=&icon_color=%23FAFAFA&title=hits&edge_flat=false)](https://github.com/2BELLBELL/2BELLBELL)                
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgjbae1212%2Fhit-counter&count_bg=%233F7EC4&title_bg=%2336C232&icon=&icon_color=%23FAFAFA&title=hits&edge_flat=false)](https://github.com/2BELLBELL/2BELLBELL)
+
+![11](https://pbs.twimg.com/profile_images/2097403581/profile_400x400.png)
+
 </div>
 
 <!--

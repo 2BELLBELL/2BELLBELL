@@ -17,7 +17,7 @@ def gcd(a, b):
 
 # 각 간격의 차의 최대 공약수 구하기
 result = minus[0]
-for i in range(len(minus) - 1):
+for i in range(len(minus)):
     if result > minus[i]:
         result = gcd(result, minus[i])
     elif result < minus[i]:

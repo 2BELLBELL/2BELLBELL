@@ -1,32 +1,21 @@
-import sys
-from collections import deque
+T = int(input())
 
-# 자연수 입력 받기
-T = int(sys.stdin.readline())
+for _ in range(1, T+1):
+    N, M = map(int, input().split())
+    arr = list(map(int, input().split()))
+    # 큐에 인덱스랑 함께 채워넣기
+    q = []
+    for idx, v in enumerate(arr):
+        q.append([v, idx])
 
-for i in range(1, T + 1):
-    M, N = map(int, sys.stdin.readline().split())
-    importance = list(map(int, sys.stdin.readline().split()))
-    deq = deque(importance)
-    stack = []
+    cnt = 1
     while True:
-        # 중요도 궁금한 문서가 맨 앞에 온 경우
-        if N == 0:
-            # 남은 문서 중 제일 중요한 경우
-            if deq[0] == max(deq):
-                print(len(stack) + 1)
+        if q[0][0] == max(q)[0]:
+            if q[0][1] == M:
+                print(cnt)
                 break
-            # 뒤에 더 중요한 문서가 있는 경우
             else:
-                deq.rotate(-1)
-                N += len(deq) - 1
-        # 그 외의 문서
+                q.pop(0)
+                cnt += 1
         else:
-            # 남은 문서 중 제일 중요한 경우
-            if deq[0] == max(deq):
-                stack.append(deq.popleft())
-                N -= 1
-            # 뒤에 더 중요한 문서가 있는 경우
-            else:
-                deq.rotate(-1)
-                N -= 1
+            q.append(q.pop(0))

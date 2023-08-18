@@ -1,23 +1,19 @@
-N = int(input())
-
 # 재귀함수
-def star(n):
-    if n == 1:
-        return '*'
-    
-    stars = star(n//3)
-    result = []
+def star(N, x, y):
+    if N == 1:
+        return
 
-    for i in stars:
-        result.append(i * 3)
-    for i in stars:
-        result.append(i + ' ' * (n//3) + i)
-    for i in stars:
-        result.append(i * 3)
+    for i in range(x+N//3, x+N-N//3):
+        for j in range(y+N//3, y+N-N//3):
+            arr[i][j] = ' '
 
-    return result
+    for i in range(0+x, N+x, N//3):
+        for j in range(0+y, N+y, N//3):
+            star(N//3, i, j)
 
-result = star(N)
 
-for i in result:
-    print(i)
+N = int(input())
+arr = [['*'] * N for _ in range(N)]
+star(N, 0, 0)
+for i in arr:
+    print(''.join(i))

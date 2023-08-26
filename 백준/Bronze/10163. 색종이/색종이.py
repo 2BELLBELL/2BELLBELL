@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 N = int(input())
 arr = [[0] * 1001 for _ in range(1001)]
 for k in range(1, N + 1):

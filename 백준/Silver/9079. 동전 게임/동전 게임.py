@@ -1,83 +1,165 @@
-from collections import deque
+import sys
+input = sys.stdin.readline
+T = int(input().strip())
 
-def change(num):
-    if num == 1:
-        return 0
-    else:
-        return 1
 
-def bfs(arr, act_num):
-    q = deque([[arr, act_num, 0]])
-    while True:
-        tmp_arr, tmp_act_num, cnt = q.popleft()
-        if tmp_arr == [0, 0, 0, 0, 0, 0, 0, 0, 0] or tmp_arr == [1, 1, 1, 1, 1, 1, 1, 1, 1]:
-            print(cnt)
-            return
-        if cnt > 4:
-            print(-1)
-            return
+# 뒤집는 모든 경우의 수를 구한 다음 조합을 이용해서 찾으면 되지 않을까
+def r1(lst):
+    for c in range(3):
+        if lst[0][c] == 'H':
+            lst[0][c] = 'T'
+        else:
+            lst[0][c] = 'H'
 
-        # 가로 경우의 수
-        if tmp_act_num != 1:
-            tmp1 = tmp_arr[:]
-            tmp1[0] = change(tmp1[0])
-            tmp1[1] = change(tmp1[1])
-            tmp1[2] = change(tmp1[2])
-            q.append([tmp1, 1, cnt+1])
-        if tmp_act_num != 2:
-            tmp2 = tmp_arr[:]
-            tmp2[3] = change(tmp2[3])
-            tmp2[4] = change(tmp2[4])
-            tmp2[5] = change(tmp2[5])
-            q.append([tmp2, 2, cnt+1])
-        if tmp_act_num != 3:
-            tmp3 = tmp_arr[:]
-            tmp3[6] = change(tmp3[6])
-            tmp3[7] = change(tmp3[7])
-            tmp3[8] = change(tmp3[8])
-            q.append([tmp3, 3, cnt+1])
-        # 세로 경우의 수
-        if tmp_act_num != 4:
-            tmp4 = tmp_arr[:]
-            tmp4[0] = change(tmp4[0])
-            tmp4[3] = change(tmp4[3])
-            tmp4[6] = change(tmp4[6])
-            q.append([tmp4, 4, cnt+1])
-        if tmp_act_num != 5:
-            tmp5 = tmp_arr[:]
-            tmp5[1] = change(tmp5[1])
-            tmp5[4] = change(tmp5[4])
-            tmp5[7] = change(tmp5[7])
-            q.append([tmp5, 5, cnt+1])
-        if tmp_act_num != 6:
-            tmp6 = tmp_arr[:]
-            tmp6[2] = change(tmp6[2])
-            tmp6[5] = change(tmp6[5])
-            tmp6[8] = change(tmp6[8])
-            q.append([tmp6, 6, cnt+1])
-        # 대각선 경우의 수
-        if tmp_act_num != 7:
-            tmp7 = tmp_arr[:]
-            tmp7[0] = change(tmp7[0])
-            tmp7[4] = change(tmp7[4])
-            tmp7[8] = change(tmp7[8])
-            q.append([tmp7, 7, cnt+1])
-        if tmp_act_num != 8:
-            tmp8 = tmp_arr[:]
-            tmp8[2] = change(tmp8[2])
-            tmp8[4] = change(tmp8[4])
-            tmp8[6] = change(tmp8[6])
-            q.append([tmp8, 8, cnt+1])
 
-T = int(input())
-for tc in range(1, T + 1):
-    arr = []
-    for _ in range(3):
-        tmp = list(input().split())
-        for i in range(3):
-            if tmp[i] == 'T':
-                tmp[i] = 0
+def r2(lst):
+    for c in range(3):
+        if lst[1][c] == 'H':
+            lst[1][c] = 'T'
+        else:
+            lst[1][c] = 'H'
+
+
+def r3(lst):
+    for c in range(3):
+        if lst[2][c] == 'H':
+            lst[2][c] = 'T'
+        else:
+            lst[2][c] = 'H'
+
+
+def c1(lst):
+    for r in range(3):
+        if lst[r][0] == 'H':
+            lst[r][0] = 'T'
+        else:
+            lst[r][0] = 'H'
+
+
+def c2(lst):
+    for r in range(3):
+        if lst[r][1] == 'H':
+            lst[r][1] = 'T'
+        else:
+            lst[r][1] = 'H'
+
+
+def c3(lst):
+    for r in range(3):
+        if lst[r][2] == 'H':
+            lst[r][2] = 'T'
+        else:
+            lst[r][2] = 'H'
+
+
+def d1(lst):
+    for c in range(3):
+        if lst[c][c] == 'H':
+            lst[c][c] = 'T'
+        else:
+            lst[c][c] = 'H'
+
+
+def d2(lst):
+    for c in range(3):
+        if lst[2 - c][c] == 'H':
+            lst[2 - c][c] = 'T'
+        else:
+            lst[2 - c][c] = 'H'
+
+
+for case in range(1, T + 1):
+    arr = [list(map(str, input().split())) for _ in range(3)]
+    f_list = [r1, r2, r3, c1, c2, c3, d1, d2]
+    cnt = 0
+    result = -1
+    for r in range(3):
+        for c in range(3):
+            if arr[r][c] == 'H':
+                cnt += 1
+                # 한번만에 된다면 1을 출력하고 그만
+    if cnt == 9 or cnt == 0:
+        result = 0
+    if result != 0:
+        # 최소 연산 횟수 1회
+        for i in f_list:
+            h_cnt = 0
+            i(arr)
+            for r in range(3):
+                for c in range(3):
+                    if arr[r][c] == 'H':
+                        h_cnt += 1
+                        # 한번만에 된다면 1을 출력하고 그만
+            if h_cnt == 9 or h_cnt == 0:
+                result = 1
+            # 아니면 다시 원상복귀
             else:
-                tmp[i] = 1
-        arr.extend(tmp)
-    bfs(arr, 0)
+                i(arr)
+
+        # 최소 연산 횟수 2회
+        for i in f_list:
+            for j in f_list:
+                h_cnt = 0
+                if i != j:
+                    i(arr)
+                    j(arr)
+                    for r in range(3):
+                        for c in range(3):
+                            if arr[r][c] == 'H':
+                                h_cnt += 1
+                    # 한번만에 된다면 1을 출력하고 그만
+                    if (h_cnt == 9 or h_cnt == 0) and result == -1:
+                        result = 2
+                    # 아니면 다시 원상복귀
+                    else:
+                        i(arr)
+                        j(arr)
+
+        # 최소 연산 횟수 3회
+        for i in f_list:
+            for j in f_list:
+                for k in f_list:
+                    h_cnt = 0
+                    if i != j != k:
+                        i(arr)
+                        j(arr)
+                        k(arr)
+                        for r in range(3):
+                            for c in range(3):
+                                if arr[r][c] == 'H':
+                                    h_cnt += 1
+                        # 한번만에 된다면 1을 출력하고 그만
+                        if (h_cnt == 9 or h_cnt == 0) and result == -1:
+                            result = 3
+                        # 아니면 다시 원상복귀
+                        else:
+                            i(arr)
+                            j(arr)
+                            k(arr)
+
+        # 최소 연산 횟수 4회
+        for i in f_list:
+            for j in f_list:
+                for k in f_list:
+                    for l in f_list:
+                        h_cnt = 0
+                        if i != j != k != l:
+                            i(arr)
+                            j(arr)
+                            k(arr)
+                            l(arr)
+                            for r in range(3):
+                                for c in range(3):
+                                    if arr[r][c] == 'H':
+                                        h_cnt += 1
+                            # 한번만에 된다면 1을 출력하고 그만
+                            if (h_cnt == 9 or h_cnt == 0) and result == -1:
+                                result = 4
+                            # 아니면 다시 원상복귀
+                            else:
+                                i(arr)
+                                j(arr)
+                                k(arr)
+                                l(arr)
+
+    print(result)

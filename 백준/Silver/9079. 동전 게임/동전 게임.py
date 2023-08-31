@@ -13,7 +13,7 @@ def bfs(arr, act_num):
         if tmp_arr == [0, 0, 0, 0, 0, 0, 0, 0, 0] or tmp_arr == [1, 1, 1, 1, 1, 1, 1, 1, 1]:
             print(cnt)
             return
-        if cnt > 5:
+        if cnt > 4:
             print(-1)
             return
 

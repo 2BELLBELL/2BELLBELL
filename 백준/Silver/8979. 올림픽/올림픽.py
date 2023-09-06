@@ -4,12 +4,9 @@ rank = 1
 for _ in range(N):
     num, g, s, c = map(int, input().split())
 
-    if g == 0:
-        g = 1000001
-    if s == 0:
-        s = 1000001
-    if c == 0:
-        c = 1000001
+    g = 1000001 - g
+    s = 1000001 - s
+    c = 1000001 - c
 
     arr.append([g, s, c, num])
 

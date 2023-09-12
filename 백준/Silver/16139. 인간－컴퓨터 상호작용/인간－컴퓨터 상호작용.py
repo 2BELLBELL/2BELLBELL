@@ -1,23 +1,20 @@
 import sys
 input = sys.stdin.readline
 
-def main():
-    S = input()
-    q = int(input())
-    sum_arr = [[] for _ in range(26)]
-    for i in range(q):
-        alphabet, l, r = input().split()
-        # 해당 알파벳번째의 sum_arr 배열이 비어있다면
-        if not sum_arr[ord(alphabet) - 97]:
-            for j in range(len(S)):
-                if S[j] == alphabet:
-                    sum_arr[ord(alphabet) - 97].append(j)
-        cnt = 0
-        for j in sum_arr[ord(alphabet) - 97]:
-            if int(l) <= j <= int(r):
-                cnt += 1
+S = input()
+q = int(input())
+# 누적합을 알파벳별로 채워넣을 2차원 배열
+sum_arr = [[0] * 26 for _ in range(len(S) + 1)]
 
-        sys.stdout.write(str(cnt) +'\n')
+# 알파벳 별 배열에 열별로 채워넣기
+for i in range(1, len(S) + 1):
+    for j in range(26):
+        if ord(S[i - 1])-97 == j:
+            sum_arr[i][j] = sum_arr[i-1][j] + 1
+        else:
+            sum_arr[i][j] = sum_arr[i-1][j]
 
-if __name__ == "__main__":
-    main()
+# 해당 알파벳의 r까지의 누적합 - l까지의 누적합 출력
+for i in range(q):
+    alphabet, l, r = input().split()
+    print(sum_arr[int(r) + 1][ord(alphabet) - 97]-sum_arr[int(l)][ord(alphabet) - 97])

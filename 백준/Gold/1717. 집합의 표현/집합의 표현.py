@@ -4,14 +4,12 @@ sys.setrecursionlimit(10**9)
 
 # find 연산
 def find(target):
-    # 본인이 집합의 대표면 바로 반환
-    if target == parent[target]:
-        return target
+    # 본인이 집합의 대표가 아니라면
+    # 집합의 대표와  같은 숫자로 변경되도록 재귀
+    if target != parent[target]:
+        parent[target] = find(parent[target])
 
-    # 경로 압축
-    parent[target] = find(parent[target])
-
-    # 집합의 대표가 아닌 경우 대표를 반환
+    # 집합의 대표를 반환
     return parent[target]
 
 

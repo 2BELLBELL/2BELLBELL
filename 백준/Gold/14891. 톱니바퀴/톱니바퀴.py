@@ -1,5 +1,5 @@
 import sys
-# input = sys.stdin.readline  
+input = sys.stdin.readline 
 # sys.stdin = open('input.txt')
 # import numpy as np
 # from itertools import combinations
@@ -28,9 +28,9 @@ def dfs(n, d):
     gear[n].rotate(d)
 
 # 12시부터 시계방향으로 N극은 0, S극은 1
-gear = [deque(list(map(int, input()))) for _ in range(4)]
+gear = [deque(list(map(int, input().rstrip()))) for _ in range(4)]
 # 회전의 총 횟수
-spin_cnt = int(input())
+spin_cnt = int(input().rstrip())
 # 톱니번호, 방향(1은 시계, -1은 반시계)
 for _ in range(spin_cnt):
     number, direction = map(int, input().split())

@@ -3,13 +3,11 @@ input = sys.stdin.readline
 from collections import deque
 import heapq
 
-
 '''
 s에서 목적지까지 가는 최단 경로가 g > h or h > g 를 거쳐서 가는 최단 경로와 같다면
-그들의 목적지 중 하나이다.
-다익스트라를 매 도착지마다 실행한다면 시간초과,,,!
-타입에러 이유는..?
-int(1e9) != 100000000 뭔 차이지
+그들의 목적지 중 하나이다
+
+다익스트라를 매 도착지마다 실행한다면 시간초과!
 '''
 
 def dijkstra(start):
@@ -32,7 +30,7 @@ def dijkstra(start):
     return distance
 
 T = int(input())
-for _ in range(T):
+for _ in range(1, T + 1):
     # 교차로, 도로, 목적지 후보의 개수
     n, m, t = map(int, input().split())
     # 출발지, 지나간 도로 정보 (g > h)
@@ -54,4 +52,5 @@ for _ in range(T):
         if dist_s[g] + dist_g[h] + dist_h[i] == dist_s[i] or dist_s[h] + dist_h[g] + dist_g[i] == dist_s[i]:
             answer.append(i)
 
-    print(*sorted(answer))
+    answer.sort()
+    print(*answer)

@@ -9,11 +9,12 @@ s에서 목적지까지 가는 최단 경로가 g > h or h > g 를 거쳐서 가
 그들의 목적지 중 하나이다.
 다익스트라를 매 도착지마다 실행한다면 시간초과,,,!
 타입에러 이유는..?
+int(1e9) != 100000000 뭔 차이지
 '''
 
 def dijkstra(start):
     q = []
-    distance = [100000000] * (n + 1)
+    distance = [int(1e9)] * (n + 1)
     heapq.heappush(q, (0, start))
     distance[start] = 0
 

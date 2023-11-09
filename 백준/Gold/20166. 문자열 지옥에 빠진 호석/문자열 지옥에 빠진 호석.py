@@ -23,15 +23,20 @@ def dfs(x, y, word):
 
 
 N, M, K = map(int, input().split())
-arr = [list(input().rstrip()) for _ in range(N)]
+arr = [list(input().strip()) for _ in range(N)]
 word_dict = {}
-god_words = [input().rstrip() for _ in range(K)]
+god_words = [input().strip() for _ in range(K)]
 god_words_max_length = 0
 for i in god_words:
     god_words_max_length = max(god_words_max_length, len(i))
 
+       
 for i in range(N):
     for j in range(M):
+        if arr[i][j] in word_dict:
+            word_dict[arr[i][j]] += 1
+        else:
+            word_dict[arr[i][j]] = 1
         dfs(i, j, arr[i][j])
 
 for i in god_words:
